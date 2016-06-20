@@ -13,6 +13,11 @@
 		A0153DC91D0CD8B000DFCE94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0153DC81D0CD8B000DFCE94 /* Assets.xcassets */; };
 		A0153DCC1D0CD8B000DFCE94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0153DCA1D0CD8B000DFCE94 /* LaunchScreen.storyboard */; };
 		A0153DD81D0CDD3700DFCE94 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A0153DD71D0CDD3700DFCE94 /* Shaders.metal */; };
+		A07A5CC91D17C7BF00999300 /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = A07A5CC81D17C7BF00999300 /* Matrix4.m */; };
+		A07A5CCC1D17C89000999300 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A5CCB1D17C89000999300 /* Vertex.swift */; };
+		A07A5CCE1D17C8D100999300 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A5CCD1D17C8D100999300 /* Node.swift */; };
+		A07A5CD01D17CB1800999300 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A5CCF1D17CB1800999300 /* Triangle.swift */; };
+		A07A5CD21D17CE3700999300 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07A5CD11D17CE3700999300 /* Cube.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,13 @@
 		A0153DD31D0CDAEE00DFCE94 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		A0153DD51D0CDAF400DFCE94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A0153DD71D0CDD3700DFCE94 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		A07A5CC61D17C7BF00999300 /* HelloMetal-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloMetal-Bridging-Header.h"; sourceTree = "<group>"; };
+		A07A5CC71D17C7BF00999300 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
+		A07A5CC81D17C7BF00999300 /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
+		A07A5CCB1D17C89000999300 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		A07A5CCD1D17C8D100999300 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		A07A5CCF1D17CB1800999300 /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		A07A5CD11D17CE3700999300 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +75,35 @@
 				A0153DC11D0CD8B000DFCE94 /* AppDelegate.swift */,
 				A0153DC31D0CD8B000DFCE94 /* ViewController.swift */,
 				A0153DC51D0CD8B000DFCE94 /* Main.storyboard */,
-				A0153DC81D0CD8B000DFCE94 /* Assets.xcassets */,
 				A0153DCA1D0CD8B000DFCE94 /* LaunchScreen.storyboard */,
-				A0153DCD1D0CD8B000DFCE94 /* Info.plist */,
+				A07A5CCB1D17C89000999300 /* Vertex.swift */,
+				A07A5CCF1D17CB1800999300 /* Triangle.swift */,
+				A07A5CCD1D17C8D100999300 /* Node.swift */,
+				A07A5CD11D17CE3700999300 /* Cube.swift */,
 				A0153DD71D0CDD3700DFCE94 /* Shaders.metal */,
+				A0153DC81D0CD8B000DFCE94 /* Assets.xcassets */,
+				A07A5CCA1D17C7C900999300 /* Supporting Files */,
+				A07A5CC51D17C7AB00999300 /* Helpers */,
 			);
 			path = HelloMetal;
+			sourceTree = "<group>";
+		};
+		A07A5CC51D17C7AB00999300 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A07A5CC71D17C7BF00999300 /* Matrix4.h */,
+				A07A5CC81D17C7BF00999300 /* Matrix4.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A07A5CCA1D17C7C900999300 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A07A5CC61D17C7BF00999300 /* HelloMetal-Bridging-Header.h */,
+				A0153DCD1D0CD8B000DFCE94 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0153DD81D0CDD3700DFCE94 /* Shaders.metal in Sources */,
+				A07A5CC91D17C7BF00999300 /* Matrix4.m in Sources */,
 				A0153DC41D0CD8B000DFCE94 /* ViewController.swift in Sources */,
+				A07A5CCE1D17C8D100999300 /* Node.swift in Sources */,
+				A07A5CD21D17CE3700999300 /* Cube.swift in Sources */,
+				A07A5CCC1D17C89000999300 /* Vertex.swift in Sources */,
+				A07A5CD01D17CB1800999300 /* Triangle.swift in Sources */,
 				A0153DC21D0CD8B000DFCE94 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,10 +296,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ios.HelloMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMetal/HelloMetal-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -267,10 +310,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = HelloMetal/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ios.HelloMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloMetal/HelloMetal-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -293,6 +338,7 @@
 				A0153DD21D0CD8B000DFCE94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
